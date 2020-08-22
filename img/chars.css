@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Montaga&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+* {
+    /*font-family: 'Noto Sans JP', sans-serif;*/
+    font-family: 'Amatic SC', cursive;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    background: #3f2d40;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.characters {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /*place-content: center;*/
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*justify-content: space-evenly;*/
+}
+
+.char-head {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    transition: background 1s cubic-bezier(.77, 1.94, .31, 1.52);
+    /*
+    
+    cubic-bezier(1, 1.64, 0.05, 1.25)
+    */
+}
+
+.character_container:nth-child(1) .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/slide/08/slide_sennen_bazz-b.png");
+}
+
+.character_container:nth-child(2) .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/slide/08/slide_sennen_uryu.png");
+}
+
+.character_container:nth-child(3) .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/slide/08/slide_sennen_jugram.png");
+}
+
+.character_container:nth-child(1):hover .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_bazz-b_01.png");
+}
+
+.character_container:nth-child(2):hover .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_uryu_01.png");
+}
+
+.character_container:nth-child(3):hover .char-head {
+    background-image: url("https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_jugram_01.png");
+}
+
+.character_container:hover .char-head {
+    background-size: 100%;
+    background-position: center 0%;
+}
+
+.character_container:hover .char-content {
+    opacity: 1;
+}
+
+.character_container:hover .char-content>p {
+    opacity: 1;
+}
+
+.char-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 445px;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    background-position: center center;
+}
+
+@keyframes back {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 125%
+    }
+    100% {
+        background-size: 100%
+    }
+}
+
+.character_container:nth-child(1) .char-back {
+    background: url("Diamond-Sunset.svg");
+    background-size: cover;
+}
+
+.character_container:nth-child(1):hover .char-back {
+    background: url("https://www.bleach-bravesouls.com/assets/img/character/bg_08.png");
+    animation: back 10s ease-in-out infinite;
+}
+
+.character_container:nth-child(2) .char-back {
+    background: url("pat.svg");
+    background-size: cover;
+}
+
+.character_container:nth-child(2):hover .char-back {
+    background: url("https://www.bleach-bravesouls.com/assets/img/character/bg_08.png");
+    animation: back 10s ease-in-out infinite;
+}
+
+.character_container:nth-child(3) .char-back {
+    background: url("Liquid-Cheese.svg");
+    background-size: cover;
+}
+
+.character_container:nth-child(3):hover .char-back {
+    background: url("https://www.bleach-bravesouls.com/assets/img/character/bg_08.png");
+    animation: back 10s ease-in-out infinite;
+}
+
+.char-content {
+    padding: 2%;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 10%;
+    opacity: 0;
+    display: grid;
+    background: rgb(25 25 25 / 50%);
+}
+
+.char-content:target {
+    height: 98%;
+}
+
+.char-content>p {
+    color: white;
+    transition: all 1.5s ease-in-out;
+    opacity: 0;
+    margin: 0;
+    letter-spacing: 1.5px;
+}
+
+.tab-info {
+    display: block;
+}
+
+.tab-info>p:nth-child(1) {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tab-info>p:nth-child(2) {
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.tab-info>p:nth-child(3) {
+    color: rgb(195, 255, 31);
+    font-size: 2.5em;
+    line-height: 10px;
+    letter-spacing: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    margin: 0;
+}
+
+.character_container {
+    flex: 1 0 25%;
+    height: 100%;
+    width: 100%;
+    cursor: url(47989.png), auto;
+}
+
+@media (max-width: 769px) {
+    .character_container {
+        flex: 1 0 100%;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.link-container {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+.text-content {
+    margin: 20px;
+}
+
+.text-content>p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/*
+バズビー
+
+BAZZ-B
+
+https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_bazz-b_01.png
+
+石田雨竜
+
+URYU ISHIDA
+
+https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_uryu_01.png
+
+ユーグラム・ハッシュヴァルト
+
+JUGRAM HASCHWALTH
+
+https://www.bleach-bravesouls.com/assets/img/character/appearance/08/character_sennen_jugram_01.png
+
+
+Background
+
+https://www.bleach-bravesouls.com/assets/img/character/bg_08.png
+*/
