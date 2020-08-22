@@ -221,6 +221,10 @@ a {
     text-align: center;
 }
 
+.open, .close{
+    font-size: 20px;
+}
+
 
 /*
 バズビー
