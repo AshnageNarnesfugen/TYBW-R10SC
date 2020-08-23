@@ -203,6 +203,15 @@ a {
         height: 100%;
         width: 100%;
     }
+    .char-head {
+        background-position: center 100%;
+    }
+    .char-content {
+        height: -webkit-fill-available;
+    }
+    .link-container {
+        display: none;
+    }
 }
 
 .link-container {
