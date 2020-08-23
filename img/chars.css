@@ -204,7 +204,7 @@ a {
         width: 100%;
     }
     .char-head {
-        background-position: center 100%;
+        background-position: center 50%;
     }
     .char-content {
         height: -webkit-fill-available;
